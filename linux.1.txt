@@ -1,0 +1,72 @@
+localhost:~# cd Desktop
+sh: cd: can't cd to Desktop: No such file or directory
+localhost:~# mkdir dir1
+localhost:~# cd dir1
+localhost:~/dir1# cat >file1
+my name is utkarsha payghan
+my course is dbda
+localhost:~/dir1# cat >>file1
+i live in bengaluru
+localhost:~/dir1# cat file1
+my name is utkarsha payghan
+my course is dbda
+i live in bengaluru
+localhost:~/dir1# cat >file2
+hello guys
+localhost:~/dir1# cat >file3
+how are you
+localhost:~/dir1# cp file2 file3
+localhost:~/dir1# cat file3
+hello guys
+localhost:~/dir1# ls
+file1  file2  file3
+localhost:~/dir1# ls -l
+total 12
+-rw-r--r--    1 root     root            66 Apr  1 22:05 file1
+-rw-r--r--    1 root     root            11 Apr  1 22:06 file2
+-rw-r--r--    1 root     root            11 Apr  1 22:07 file3
+localhost:~/dir1# ls -al
+total 24
+drwxr-xr-x    2 root     root           170 Apr  1 22:04 .
+drwxr-xr-x    6 root     root           258 Jan  9  2021 ..
+-rw-r--r--    1 root     root             0 Apr  1 22:11 .file5
+-rwxrwxrwx    1 root     root            66 Apr  1 22:05 file1
+-rw-r--r--    1 root     root            11 Apr  1 22:06 file2
+-rw-r--r--    1 root     root            11 Apr  1 22:07 file3
+-rw-r--r--    1 root     root             0 Apr  1 22:11 file4
+-rw-r--r--    1 root     root            27 Apr  1 22:19 file6
+localhost:~/dir1# chmod 763 file2
+localhost:~/dir1# ls -al
+total 24
+drwxr-xr-x    2 root     root           170 Apr  1 22:04 .
+drwxr-xr-x    6 root     root           258 Jan  9  2021 ..
+-rw-r--r--    1 root     root             0 Apr  1 22:11 .file5
+-rwxrwxrwx    1 root     root            66 Apr  1 22:05 file1
+-rwxrw--wx    1 root     root            11 Apr  1 22:06 file2
+-rw-r--r--    1 root     root            11 Apr  1 22:07 file3
+-rw-r--r--    1 root     root             0 Apr  1 22:11 file4
+-rw-r--r--    1 root     root            27 Apr  1 22:19 file6
+localhost:~/dir1#
+localhost:~/dir1# touch .file10
+localhost:~/dir1# ls -a
+.        .file10  file1    file3    file6
+..       .file5   file2    file4
+localhost:~/dir1# touch file10
+localhost:~/dir1# stat file10
+  File: file10
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: eh/14d  Inode: 68707       Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-04-01 22:39:03.000000000
+Modify: 2024-04-01 22:39:03.000000000
+Change: 2024-04-01 22:39:03.000000000
+ 
+localhost:~/dir1# touch -a file10
+localhost:~/dir1# stat file10
+  File: file10
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: eh/14d  Inode: 68707       Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-04-01 22:40:03.000000000
+Modify: 2024-04-01 22:40:03.000000000
+Change: 2024-04-01 22:40:03.000000000
